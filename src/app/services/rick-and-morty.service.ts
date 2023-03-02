@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Observable} from "rxjs";
 import {data} from "autoprefixer";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,9 @@ import {data} from "autoprefixer";
 export class RickAndMortyService {
   private apiUrl = 'https://rickandmortyapi.com/api';
 
-  constructor() { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
   getCharacters() {
     return fetch(`${this.apiUrl}/character`)
@@ -22,11 +25,6 @@ export class RickAndMortyService {
       .then(data => data);
   }
 
-  getEpisodio() {
-    fetch(`${this.apiUrl}/episode`)
-      .then(response => response.json())
-      .then(data => data.results);
-  }
 }
 
 

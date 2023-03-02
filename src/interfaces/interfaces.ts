@@ -46,3 +46,9 @@ export enum Status {
   Dead = "Dead",
   Unknown = "unknown",
 }
+
+export interface Episode {
+  name: string;
+  air_date: string;
+  episode: string;
+}

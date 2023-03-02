@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { CharactersComponent } from './components/characters/characters.component';
 import { CharacterItemComponent } from './components/character-item/character-item.component';
 import { CharacterEpisodesComponent } from './components/character-episodes/character-episodes.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CharacterEpisodesComponent } from './components/character-episodes/char
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
