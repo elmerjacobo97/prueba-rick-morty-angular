@@ -1,0 +1,16 @@
+<div *ngIf="character" class="w-full lg:w-1/2 mx-auto">
+  <div class="flex justify-center gap-4 bg-white shadow rounded-lg p-3 hover:shadow-lg transition-all">
+    <img src="{{character.image}}" alt="{{character.name}}">
+    <div class="mt-10">
+      <p class="font-medium text-lg">ID: #<span class="font-normal">{{ character.id }}</span></p>
+      <p class="font-medium text-lg">Name: <span class="font-normal">{{ character.name }}</span></p>
+      <p class="font-medium text-lg">Gender: <span class="font-normal">{{ character.gender }}</span></p>
+      <p class="font-medium text-lg">Location: <span class="font-normal">{{ character.location.name }}</span></p>
+      <p class="font-medium text-lg">Status: <span class="font-normal">{{ character.status }}</span></p>
+      <p class="font-medium text-lg">Species: <span class="font-normal">{{ character.species }}</span></p>
+
+    </div>
+  </div>
+</div>
+
+
