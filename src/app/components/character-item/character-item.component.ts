@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RickAndMortyService } from '../../services/rick-and-morty.service';
 import { Character } from '../../../interfaces/interfaces';
 
@@ -24,12 +24,21 @@ export class CharacterItemComponent {
 
     // Validar que si ID no es un número, me envíe hacia la lista de personajes.
     if (!Number(id)) {
-       this.router.navigateByUrl('/characters')
+      this.router.navigateByUrl('/characters');
     }
 
     // Traer el personaje por ID con un servicio.
     this.rickAndMortyService.getCharacterById(id).then((character) => {
       this.character = character;
     });
+  }
+
+  getEpisode(url: string) {
+    const segment = url.split('/');
+    if (segment) {
+      this.router.navigateByUrl(
+        `/characters/episodes/${segment[segment.length - 1]}`
+      );
+    }
   }
 }

@@ -1,34 +1,48 @@
 <!-- Si hay un personaje, entonces que se imprima en pantalla. -->
 <div *ngIf="character" class="w-full lg:w-1/2 mx-auto">
   <div
-    class="flex justify-center gap-4 bg-white shadow rounded-lg p-3 hover:shadow-lg transition-all animate__animated animate__fadeIn"
+    class="bg-white shadow rounded-lg p-3 hover:shadow-lg transition-all animate__animated animate__fadeIn"
   >
-    <!-- Imagen del personaje. -->
-    <img src="{{ character.image }}" alt="{{ character.name }}" />
-    <!-- Información del personaje. -->
-    <div>
-      <h3 class="text-2xl font-bold">Información:</h3>
-      <p class="font-bold">
-        ID: #<span class="font-normal">{{ character.id }}</span>
-      </p>
-      <p class="font-bold">
-        Name: <span class="font-normal">{{ character.name }}</span>
-      </p>
-      <p class="font-bold">
-        Gender: <span class="font-normal">{{ character.gender }}</span>
-      </p>
-      <p class="font-bold">
-        Location: <span class="font-normal">{{ character.location.name }}</span>
-      </p>
-      <p class="font-bold">
-        Status: <span class="font-normal">{{ character.status }}</span>
-      </p>
-      <p class="font-bold">
-        Species: <span class="font-normal">{{ character.species }}</span>
-      </p>
-      <div class="mt-10 flex justify-end">
-        <a routerLink="/characters" class="underline"> Regresar al Home </a>
+    <div class="md:flex md:gap-5">
+      <!-- Imagen del personaje. -->
+      <img src="{{ character.image }}" alt="{{ character.name }}" />
+      <!-- Información del personaje. -->
+      <div>
+        <h3 class="text-2xl font-bold">Información:</h3>
+        <p class="font-bold mt-2">
+          ID: #<span class="font-normal">{{ character.id }}</span>
+        </p>
+        <p class="font-bold">
+          Name: <span class="font-normal">{{ character.name }}</span>
+        </p>
+        <p class="font-bold">
+          Gender: <span class="font-normal">{{ character.gender }}</span>
+        </p>
+        <p class="font-bold">
+          Location:
+          <span class="font-normal">{{ character.location.name }}</span>
+        </p>
+        <p class="font-bold">
+          Status: <span class="font-normal">{{ character.status }}</span>
+        </p>
+        <p class="font-bold">
+          Species: <span class="font-normal">{{ character.species }}</span>
+        </p>
       </div>
+    </div>
+    <div>
+      <h3 class="text-2xl font-bold mt-2">Episodes:</h3>
+      <div *ngFor="let episode of character.episode">
+        <a
+          (click)="getEpisode(episode)"
+          class="cursor-pointer underline hover:text-gray-700"
+        >
+          {{ episode }}
+        </a>
+      </div>
+    </div>
+    <div class="mt-10 flex justify-end">
+      <a routerLink="/characters" class="underline">Regresar al Home </a>
     </div>
   </div>
 </div>

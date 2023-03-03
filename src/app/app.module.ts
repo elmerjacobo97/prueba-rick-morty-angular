@@ -5,8 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CharactersComponent } from './components/characters/characters.component';
 import { CharacterItemComponent } from './components/character-item/character-item.component';
-import {HttpClientModule} from "@angular/common/http";
+import { HttpClientModule } from '@angular/common/http';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { DetailEpisodeComponent } from './components/detail-episode/detail-episode.component';
 
 @NgModule({
   declarations: [
@@ -14,13 +15,10 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     CharactersComponent,
     CharacterItemComponent,
     PageNotFoundComponent,
+    DetailEpisodeComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -7,7 +7,11 @@
     class="bg-white shadow rounded-lg p-3 cursor-pointer hover:shadow-lg transition-all"
   >
     <a [routerLink]="['/characters', character.id]">
-      <img class="animate__animated animate__fadeIn" src="{{ character.image }}" alt="{{ character.name }}" />
+      <img
+        class="animate__animated animate__fadeIn"
+        src="{{ character.image }}"
+        alt="{{ character.name }}"
+      />
       <div class="flex justify-evenly mt-1">
         <p>#{{ character.id }}</p>
         <p>{{ character.name }}</p>

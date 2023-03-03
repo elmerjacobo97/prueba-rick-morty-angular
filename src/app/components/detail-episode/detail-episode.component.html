@@ -1,0 +1,26 @@
+<div
+  class="container mx-auto w-full md:w-1/3 bg-white p-4 shadow-md rounded-lg animate__animated animate__fadeIn"
+>
+  <ul *ngIf="episode">
+    <h3 class="text-2xl font-bold mb-2  ">Información:</h3>
+    <li class="text-lg font-bold">
+      ID:
+      <span class="font-normal">#{{ episode.id }}</span>
+    </li>
+    <li class="text-lg font-bold">
+      Name:
+      <span class="font-normal">{{ episode.name }}</span>
+    </li>
+    <li class="text-lg font-bold">
+      Air Date:
+      <span class="font-normal">{{ episode.air_date }}</span>
+    </li>
+    <li class="text-lg font-bold mb-2">
+      Episode:
+      <span class="font-normal">{{ episode.episode }}</span>
+    </li>
+    <a routerLink="" class="underline hover:text-gray-700">
+      Regrésame al Home
+    </a>
+  </ul>
+</div>
