@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {CharactersComponent} from "./components/characters/characters.component";
-import {CharacterItemComponent} from "./components/character-item/character-item.component";
+import { CharactersComponent } from './components/characters/characters.component';
+import { CharacterItemComponent } from './components/character-item/character-item.component';
 
 const routes: Routes = [
   { path: 'characters', component: CharactersComponent },
@@ -11,6 +11,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
