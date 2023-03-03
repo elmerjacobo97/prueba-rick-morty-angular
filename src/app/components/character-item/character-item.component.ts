@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { RickAndMortyService } from '../../services/rick-and-morty.service';
-import { Character, Episode } from '../../../interfaces/interfaces';
-import { HttpClient } from '@angular/common/http';
+import { Character } from '../../../interfaces/interfaces';
 
 @Component({
   selector: 'app-character-item',
@@ -10,17 +9,25 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./character-item.component.scss'],
 })
 export class CharacterItemComponent {
-  character?: Character;
-  episodes?: Episode[];
+  // Definir variables.
+  public character?: Character;
 
   constructor(
     private rickAndMortyService: RickAndMortyService,
     private route: ActivatedRoute,
-    private http: HttpClient
+    private router: Router
   ) {}
 
+  // Cuando el componente esté listo, se muestre la información del personaje.
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
+
+    // Validar que si ID no es un número, me envíe hacia la lista de personajes.
+    if (!Number(id)) {
+       this.router.navigateByUrl('/characters')
+    }
+
+    // Traer el personaje por ID con un servicio.
     this.rickAndMortyService.getCharacterById(id).then((character) => {
       this.character = character;
     });
